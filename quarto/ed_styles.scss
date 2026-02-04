@@ -94,3 +94,17 @@ div.sourceCode > .code-copy-button {
   visibility: visible !important;
   display: flex !important;
 }
+
+/* Center videos horizontally */
+.quarto-video,
+video,
+.video-container {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.quarto-figure,
+figure {
+  text-align: center;
+}
