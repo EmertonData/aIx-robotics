@@ -1,0 +1,49 @@
+project:
+  type: default
+  output-dir: _site
+
+# Profile definitions
+profile:
+  default: emerton
+
+# Shared format configuration (applies to all profiles)
+format:
+  html:
+    # Layout configuration
+    page-layout: article
+    grid:
+      sidebar-width: 312px
+      body-width: 1320px
+      margin-width: 200px
+      gutter-width: 1.5rem
+
+    # Table of contents
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    toc-title: "Table of Contents"
+    toc-expand: 1
+    number-sections: true
+    number-depth: 3
+
+    # Code display
+    code-fold: false
+    code-summary: "Show code"
+    code-tools: false
+    code-copy: hover
+    code-block-bg: true
+    code-overflow: wrap
+    highlight-style: github
+
+    # Typography
+    fontsize: "16px"
+    linestretch: 1.5
+
+    # Navigation
+    smooth-scroll: true
+    anchor-sections: true
+
+    # Output options
+    embed-resources: true
+    self-contained: true
+    minimal: false

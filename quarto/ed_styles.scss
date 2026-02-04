@@ -1,0 +1,72 @@
+/*-- scss:rules --*/
+
+// ============================================
+// SHARED ED STYLES RULES
+// Variables are defined in brand-specific files
+// ============================================
+
+// Custom CSS rules can be added here if SCSS variables are not sufficient.
+// For example, to ensure the navbar logo has a specific max height:
+.navbar-brand img {
+  max-height: 40px;
+  width: auto;
+}
+
+.navbar {
+  background-color: rgb(255, 255, 255) !important;
+  color: black !important;
+}
+
+.navbar a, .navbar-brand {
+  color: black !important;
+}
+
+.navbar-logo img {
+  height: auto;
+  width: auto;
+  max-height: 50px;
+  image-rendering: auto;
+}
+
+/* Header logo layout (left and right logos) */
+.header-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  border-bottom: 2px solid $header-border-color;
+}
+
+.header-logo .left-logo img,
+.header-logo .right-logo img {
+  max-height: 70px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .header-logo { padding: 6px 10px; }
+  .header-logo .left-logo img,
+  .header-logo .right-logo img { max-height: 50px; }
+}
+
+/* Code copy button - make it more visible */
+.code-copy-button {
+  color: #ffffff !important;
+  opacity: 0.7;
+}
+
+.code-copy-button:hover {
+  color: #ffffff !important;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.code-copy-button > .bi {
+  color: #ffffff !important;
+}
+
+/* Also style the clipboard icon */
+.clipboard {
+  color: #ffffff !important;
+}

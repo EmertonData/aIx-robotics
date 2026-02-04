@@ -1,0 +1,11 @@
+# Emerton Data profile-specific configuration
+format:
+  html:
+    theme:
+      - cosmo
+      - _variables-emerton.scss
+      - ed_styles.scss
+      - tech_modern.scss
+    mainfont: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
+    code-block-border-left: "#3b82f6"
+    include-in-header: header_logo_emerton.html

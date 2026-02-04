@@ -1,0 +1,565 @@
+/*-- scss:rules --*/
+
+// ============================================
+// SHARED STYLING RULES
+// Variables are defined in brand-specific files
+// ============================================
+
+// Modern body styling
+body {
+  font-family: $font-family-base;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $body-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Wider main container - Quarto grid overrides
+div.page-columns {
+  max-width: 100%;
+}
+
+div.page-columns > main {
+  max-width: 100%;
+}
+
+.column-body {
+  max-width: 100%;
+}
+
+.content {
+  max-width: 100%;
+}
+
+// Professional heading styles
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-headings;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: $brand-darker;
+}
+
+h2 {
+  font-size: 1.875rem;
+  color: $brand-dark;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid $brand-light;
+  margin-top: 2em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: $brand-medium;
+}
+
+h4 {
+  font-size: 1.25rem;
+  color: $brand-muted;
+}
+
+// Modern link styling
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    color: $link-hover-color;
+    border-bottom-color: $link-hover-color;
+  }
+}
+
+// Professional code blocks
+pre {
+  background-color: #f8fafc;
+  border-radius: $border-radius;
+  padding: 1.25rem;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  box-shadow: $box-shadow-sm;
+  margin: 1.5rem 0;
+
+  code {
+    background: none;
+    color: #1e293b;
+    font-family: $font-family-monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    padding: 0;
+  }
+}
+
+// Inline code
+code {
+  background-color: $code-bg;
+  color: $code-color;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: $font-family-monospace;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+// Quarto code fold button styling
+.code-fold-btn,
+details.code-fold summary {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 0.25rem 0.75rem;
+  font-family: $font-family-monospace;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #e2e8f0;
+    color: #1e293b;
+  }
+}
+
+// Quarto cell code blocks (Jupyter output)
+.cell > .sourceCode,
+.cell-code {
+  background-color: #f8fafc !important;
+
+  pre {
+    background-color: #f8fafc !important;
+
+    code {
+      color: #1e293b !important;
+    }
+  }
+}
+
+// Override Quarto's code-block-bg if it conflicts
+div.sourceCode {
+  background-color: #f8fafc !important;
+  border-left: 3px solid $brand-primary;
+  border-radius: $border-radius;
+}
+
+// Ensure syntax highlighting tokens are visible on light background
+.sourceCode {
+  .co { color: #6a737d !important; }  // comments (gray)
+  .kw { color: #d73a49 !important; }  // keywords (red)
+  .cf { color: #d73a49 !important; }  // control flow (red)
+  .op { color: #1e293b !important; }  // operators (dark)
+  .st { color: #032f62 !important; }  // strings (dark blue)
+  .dv { color: #005cc5 !important; }  // decimal values (blue)
+  .fl { color: #005cc5 !important; }  // floats (blue)
+  .fu { color: #6f42c1 !important; }  // functions (purple)
+  .im { color: #d73a49 !important; }  // imports (red)
+  .bu { color: #005cc5 !important; }  // built-in (blue)
+  .va { color: #1e293b !important; }  // variables (dark)
+  .at { color: #005cc5 !important; }  // attributes (blue)
+  .cn { color: #005cc5 !important; }  // constants (blue)
+  .sc { color: #032f62 !important; }  // special char (dark blue)
+  .nn { color: #1e293b !important; }  // namespace/module names (dark)
+  .ot { color: #1e293b !important; }  // other (dark)
+  .pp { color: #d73a49 !important; }  // preprocessor (red)
+  .ss { color: #032f62 !important; }  // special string (dark blue)
+  .vs { color: #032f62 !important; }  // verbatim string (dark blue)
+  .wa { color: #d73a49 !important; }  // warning (red)
+  .er { color: #d73a49 !important; }  // error (red)
+  .al { color: #d73a49 !important; }  // alert (red)
+  .an { color: #6a737d !important; }  // annotation (gray)
+  .cv { color: #6a737d !important; }  // comment var (gray)
+  .do { color: #6a737d !important; }  // documentation (gray)
+  .dt { color: #d73a49 !important; }  // data type (red)
+  .ex { color: #1e293b !important; }  // extension (dark)
+  .in { color: #6a737d !important; }  // information (gray)
+}
+
+// Enhanced table styling (modern tech style)
+table {
+  width: 100%;
+  border-collapse: collapse !important;
+  margin: 1.5rem 0;
+  font-size: 0.9375rem;
+  border: none !important;
+}
+
+thead {
+  background: linear-gradient(135deg, $table-header-start 0%, $table-header-end 100%);
+
+  th {
+    color: #ffffff !important;
+    font-weight: 600;
+    text-align: left;
+    vertical-align: middle !important;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    letter-spacing: 0.05em;
+    border: none !important;
+    border-bottom: none !important;
+    line-height: 1.2;
+    height: auto;
+  }
+
+  th:first-child {
+    vertical-align: middle !important;
+  }
+}
+
+thead tr {
+  vertical-align: middle !important;
+}
+
+tbody {
+  background-color: #ffffff;
+
+  tr {
+    transition: background-color 0.15s ease;
+    border: none !important;
+    border-bottom: none !important;
+
+    &:hover {
+      background-color: #f8fafc;
+    }
+  }
+
+  td {
+    padding: 0.875rem 1rem;
+    color: $body-color;
+    border: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-top: none !important;
+  }
+
+  td:first-child {
+    border: none !important;
+    border-bottom: none !important;
+  }
+}
+
+// Force remove all table borders globally
+table, thead, tbody, tr, th, td {
+  border: none !important;
+  border-bottom: none !important;
+}
+
+// Pandas dataframe specific styles
+.dataframe {
+  border: none !important;
+
+  thead {
+    tr {
+      border: none !important;
+
+      th {
+        vertical-align: middle !important;
+        border: none !important;
+        border-bottom: none !important;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border: none !important;
+
+      td, th {
+        border: none !important;
+        border-bottom: none !important;
+        border-right: none !important;
+        border-left: none !important;
+      }
+    }
+  }
+
+  // Target index column specifically
+  .row_heading, .index_name {
+    vertical-align: middle !important;
+    border: none !important;
+  }
+
+  // Target data columns
+  .col_heading {
+    vertical-align: middle !important;
+    border: none !important;
+  }
+}
+
+// Modern TOC styling (GitLab-inspired)
+#TOC {
+  background-color: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+  padding: 0.5rem;
+  margin-right: 2.5rem;
+  font-size: 0.9375rem;
+
+  .toc-title,
+  h2 {
+    font-family: $font-family-headings !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    font-size: 1rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin: 0.25rem 0;
+
+      a {
+        color: #64748b;
+        padding: 0.375rem 0.75rem;
+        display: block;
+        border-radius: 0px;
+        border-bottom: none;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: #e2e8f0;
+          color: #1e293b;
+          transform: translateX(2px);
+        }
+
+        &.active {
+          background-color: $brand-accent-bg;
+          color: $brand-accent-text;
+          font-weight: 500;
+          border-left: 3px solid $brand-primary;
+        }
+      }
+    }
+
+    // Nested TOC items
+    ul {
+      padding-left: 1rem;
+      margin-top: 0.25rem;
+
+      li a {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.75rem;
+      }
+    }
+  }
+}
+
+// Professional header logo styling
+.header-logo {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  img {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+// Modern title block
+.quarto-title-block {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e2e8f0;
+
+  .quarto-title {
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: #64748b;
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+
+  .author {
+    color: #94a3b8;
+    font-size: 1rem;
+  }
+}
+
+// Panel tabset (modern style)
+.panel-tabset {
+  margin: 2rem 0;
+
+  .nav-tabs {
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 1.5rem;
+
+    .nav-link {
+      color: #64748b;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 0.75rem 1.25rem;
+      font-weight: 500;
+      font-family: $font-family-headings;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: #1e293b;
+        background-color: #f8fafc;
+        border-radius: 6px 6px 0 0;
+      }
+
+      &.active {
+        color: $brand-primary;
+        border-bottom-color: $brand-primary;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+// Code block enhancements
+.code-with-filename {
+  margin: 1.5rem 0;
+
+  .code-filename {
+    background-color: #1e293b;
+    color: #94a3b8;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius $border-radius 0 0;
+    font-family: $font-family-monospace;
+    font-size: 0.8125rem;
+    border-bottom: 1px solid #334155;
+  }
+
+  pre {
+    margin-top: 0;
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}
+
+// Code copy button styling
+.code-copy-button {
+  background-color: #334155;
+  color: #cbd5e1;
+  border: 1px solid #475569;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-family: $font-family-monospace;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #475569;
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+}
+
+// Content width and spacing
+.content {
+  max-width: 100%;
+}
+
+// Blockquotes (modern style)
+blockquote {
+  border-left: 4px solid $brand-primary;
+  background-color: #f8fafc;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 $border-radius $border-radius 0;
+  color: #475569;
+
+  p {
+    margin: 0.5rem 0;
+  }
+}
+
+// Lists styling
+ul, ol {
+  line-height: 1.5;
+
+  li {
+    margin: 0.5rem 0;
+  }
+}
+
+// Emphasis
+strong {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+em {
+  color: #475569;
+}
+
+// Horizontal rules
+hr {
+  border: none;
+  border-top: 2px solid #e2e8f0;
+  margin: 2rem 0;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  table {
+    font-size: 0.875rem;
+  }
+
+  thead th,
+  tbody td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  #TOC {
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+}
+
+// Print styles
+@media print {
+  body {
+    font-size: 12pt;
+    color: #000000;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  pre {
+    border: 1px solid #cccccc;
+    background-color: #f5f5f5;
+  }
+
+  .header-logo {
+    box-shadow: none;
+  }
+}
