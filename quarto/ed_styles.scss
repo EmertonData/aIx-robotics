@@ -96,9 +96,14 @@ div.sourceCode > .code-copy-button {
 }
 
 /* Center videos horizontally */
-.quarto-video,
-video,
-.video-container {
+.quarto-video {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.quarto-video video,
+.quarto-video .video-js {
   display: block !important;
   margin-left: auto !important;
   margin-right: auto !important;
